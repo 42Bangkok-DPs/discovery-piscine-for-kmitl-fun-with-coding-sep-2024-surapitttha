@@ -2,33 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basics</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+        header {
+            text-align: center;
+            color: white;
+            font-size: 32px;
+        }
+        section {
+            display: flex;
+            justify-content: space-around; 
+        }
+        section div {
+            text-align: center; 
+        }
+        section img {
+            width: 100%; 
+            max-width: 300px; 
+        }
+        a {
+            display: block;
+            margin-top: 10px; 
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+        }
+        hr {
+            border: 1px solid black;
+            margin-top: 20px; 
+        }
+        footer p{
+            text-align: right;
+            font-style: italic;
+            font-family: monospace;
+        }
+    </style>
 </head>
-<body style="background-color: pink;">
-    <h1 style="text-align: center; color: white; font-size: 2em;">Basics $ Home</h1>
-    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <div>
-            <img src="https://images.unsplash.com/photo-1539278383962-a7774385fa02?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=468&q=80" 
-                 alt="Shop Image 1" 
-                 width="200" 
-                 height="auto">
-            <br>
-            <a href="https://images.unsplash.com/photo-1539278383962-a7774385fa02?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=468&q=80">Shop 1 Website</a>
-        </div>
-        <div>
-            <img src="https://images.unsplash.com/photo-1586898633445-fc34716255b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=468&q=80" 
-                 alt="Shop Image 2" 
-                 width="200" 
-                 height="auto">
-            <br>
-            <a href="https://images.unsplash.com/photo-1586898633445-fc34716255b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=468&q=80">Shop 2 Website</a>
-        </div>
-    </div>
-    <hr>
-    <div style="text-align: right; font-family: monospace; font-style: italic;">
-        <i>© your-login-2024</i>
-    </div>
+<body>
+    <header><h1>-so bigger- ©</h1></header>
+    <main>
+        <section>
+            <div>
+                <img src="https://www.se-ed.com/Templates/SE-ED_2015/Images/header_amzl_f_ktn_logo.png?v=3" alt="se-ed">
+                <a href="https://m.se-ed.com/">se-ed</a>
+            </div>
+            <div>
+                <img src="https://www.chulabook.com/icon/logo.svg" alt="chulabook">
+                <a href="https://www.chulabook.com/">chulabook</a>
+            </div>
+        </section>
+        <hr>
+    </main>
+    <footer>
+        <div><p>© sthuiabk 2024</p></div>   
+    </footer>
 </body>
 </html>
