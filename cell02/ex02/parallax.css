@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+	color: white;
+	font-size: 24px;
+}
+
+.top-box {
+	background-image: url('https://i.pinimg.com/236x/76/1e/b8/761eb81535806ec7186fdf2abd6453ad.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.black-box {
+	background-color: black;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottom-box {
+	background-image: url('https://wallpaperaccess.com/full/3239012.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
