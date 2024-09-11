@@ -1,0 +1,15 @@
+h1 {
+	text-align: center;
+}
+img {
+	object-fit: cover;
+}
+.container {
+	margin: 20px 10% 20px 10%;
+}
+.content {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	height: 240px;
+}
