@@ -1,20 +1,53 @@
-table{
-            
-    table-layout: fixed; 
-    width: 100%;
-    height: 100vh;
+/* Default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+table.responsive-table {
     border-collapse: collapse;
-    
+    width: 100%;
+    max-width: 1000px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
-th{
-    border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(92, 123, 188);
-    text-align: left;
+
+th {
+    border: 1px solid black;
+    font-size: 40px;
     padding: 10px;
 }
-td{
-    border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(67, 196, 149);
-    text-align: left;
-    padding: 10px;
+
+/* Specific styles for the 'man' and 'boy' columns */
+th.man {
+    background-color: rgb(202, 237, 255);
+    color: rgb(82, 114, 255);
+    width: 50%;
+}
+
+th.boy {
+    background-color: rgb(255, 226, 255);
+    color: rgb(255, 59, 239);
+    width: 50%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    th {
+        font-size: 30px;
+    }
+    table.responsive-table {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    th {
+        font-size: 20px;
+    }
+    table.responsive-table {
+        width: 100%;
+    }
 }
