@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .calculator {
+            display: inline-block;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        input, select {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h2>Basic Calculator</h2>
+        <form id="calcForm">
+            <input type="number" id="leftInput" placeholder="Left operand" min="0" required>
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" id="rightInput" placeholder="Right operand" min="0" required>
+            <br><br>
+            <input type="submit" value="Try me!">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('calcForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevents page refresh
+
+            let leftValue = document.getElementById('leftInput').value;
+            let rightValue = document.getElementById('rightInput').value;
+            let operator = document.getElementById('operator').value;
+
+            // Convert values to numbers
+            leftValue = Number(leftValue);
+            rightValue = Number(rightValue);
+
+            // Input validation
+            if (leftValue < 0 || rightValue < 0 || isNaN(leftValue) || isNaN(rightValue)) {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case '+':
+                    result = leftValue + rightValue;
+                    break;
+                case '-':
+                    result = leftValue - rightValue;
+                    break;
+                case '*':
+                    result = leftValue * rightValue;
+                    break;
+                case '/':
+                    if (rightValue === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = leftValue / rightValue;
+                    break;
+                case '%':
+                    if (rightValue === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = leftValue % rightValue;
+                    break;
+                default:
+                    alert('Error :(');
+                    console.log('Error :(');
+                    return;
+            }
+
+            alert('Result: ' + result);
+            console.log('Result: ' + result);
+        });
+
+        // Reminder alert every 30 seconds
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+
+</body>
+</html>
