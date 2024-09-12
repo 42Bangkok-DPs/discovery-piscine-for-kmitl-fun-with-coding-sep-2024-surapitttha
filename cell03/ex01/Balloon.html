@@ -4,54 +4,79 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Balloon</title>
-    <style>
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      #balloon {
-        width: 200px;
-        height: 200px;
-        background-color: red;
-        border-radius: 50%;
-        transition: all 0.3s;
-      }
-    </style>
+    <title>Document</title>
   </head>
+  <style>
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    #ballon {
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 200px;
+    }
+  </style>
   <body>
     <div class="container">
-      <div id="balloon" onclick="addSize()" onmouseleave="removeSize()"></div>
+      <div
+        onclick="addSize()"
+        onmouseleave="removeSize()"
+        id="ballon"
+        style="width: 200px; height: 200px; background-color: red"
+      ></div>
     </div>
-
-    <script>
-      const colors = ["red", "green", "blue"];
-
-      const changeSize = (operation) => {
-        const balloon = document.getElementById("balloon");
-        let width = parseInt(balloon.style.width);
-        let height = parseInt(balloon.style.height);
-
-        if (operation === "increase") {
-          width += 10;
-          height += 10;
-        } else {
-          width -= 5;
-          height -= 5;
-        }
-
-        balloon.style.width = width + "px";
-        balloon.style.height = height + "px";
-
-        const currentColor = balloon.style.backgroundColor;
-        balloon.style.backgroundColor =
-          colors[(colors.indexOf(currentColor) + 1) % colors.length];
-      };
-
-      const addSize = () => changeSize("increase");
-      const removeSize = () => changeSize("decrease");
-    </script>
   </body>
+  <script type="text/javascript">
+      var x = 200;
+      var st = true;
+      var color = ["#C21010","#6BCB77","#293462"]
+      var i = 0;
+      var col = "color"
+      function decrese(){
+          i -= 1;
+          if (i >= 0){
+              document.querySelector("button").style.background = color[i]
+          }
+          else{
+              i = 2;
+              document.querySelector("button").style.background = color[i]
+          }
+
+          if(x>200){
+              x = x-5;
+              document.querySelector("button").style.height = x-5+"px";
+              document.querySelector("button").style.width = x-5+"px";
+              console.log(x,col);
+          
+      }
+        
+      }
+      function increse(){
+          x = x+10;
+          
+          i += 1;
+          if (x > 420){
+              x = 200;
+              col = "red";
+              i = 0;
+              document.querySelector("button").style.background = color[i]
+          } 
+          document.querySelector("button").style.height = x+10+"px";
+          document.querySelector("button").style.width = x+10+"px";
+          console.log(x,col);
+          
+          if (i <= 2){
+              document.querySelector("button").style.background = color[i]
+          }
+          else{
+              i = 0;
+              document.querySelector("button").style.background = color[i]
+          }
+      }
+  
+      
+  </script>
 </html>
