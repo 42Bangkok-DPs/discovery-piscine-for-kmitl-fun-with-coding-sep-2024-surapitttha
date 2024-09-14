@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="todo.js"></script>
-    <title>TODO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
     <style>
-        .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .addbtn {
-            width: 70px;
-            border-radius: 20px;
-            background-color: #000000;
-            color: white;
-            padding: 8px;
-            font-size: 16px;
-            margin: 5px;
-        }
-  
-        .addbtn:hover {
-            background-color: #ffffff;
-            color: #000000;
-            border: 1px solid black;
-        }
-  
-        .todoItem {
-            width: 300px;
-            border-radius: 5px;
-            background-color: #ffffff;
-            color: #000000;
-            border: 1px solid black;
-            padding: 10px;
-            font-size: 15px;
-            margin: 3px;
-        }
-  
-        .todoItem:hover {
-            background-color: #f6c0c0;
-        }
-
         #ft_list {
-            display: flex;
-            flex-direction: column-reverse;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        .todo-item {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .todo-item:hover {
+            background-color: #e0e0e0;
+        }
+        #new-btn {
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+        #new-btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
-    <body>
-        <div class="container">
-            <button class="addbtn" id="addBtn">New</button>
-            <div id="ft_list"></div>
-        </div>
-    </body>
+<body>
+    <center><div id="ft_list"></div></center>
+    <center><button id="new-btn">New</button></center>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="todo.js"></script>
+</body>
 </html>
