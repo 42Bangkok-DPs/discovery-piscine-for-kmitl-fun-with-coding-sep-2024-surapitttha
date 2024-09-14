@@ -18,7 +18,7 @@ $(document).ready(function() {
     function addTodoToDOM(todoText) {
         if (todoText) {
             const todoItem = $('<div>').addClass('todo-item').text(todoText);
-            $('#ft_list').prepend(todoItem);
+            $('#ft_list').append(todoItem);  
         }
     }
 
