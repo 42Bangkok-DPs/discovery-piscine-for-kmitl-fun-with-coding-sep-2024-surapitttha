@@ -2,7 +2,7 @@ $(document).ready(function() {
     function loadTodos() {
         const todos = getCookie('todos');
         if (todos) {
-            const todoArray = JSON.parse(todos);
+            const todoArray = JSON.parse(decodeURIComponent(todos));  // Decode ข้อมูลจากคุกกี้
             todoArray.forEach(todo => addTodoToDOM(todo, false));  // โหลดรายการจากคุกกี้
         }
     }
@@ -12,7 +12,7 @@ $(document).ready(function() {
         $('#ft_list .todo-item').each(function() {
             todoItems.unshift($(this).text());  // ใช้ unshift เพื่อเก็บรายการในลำดับล่าสุดอยู่ด้านบน
         });
-        setCookie('todos', JSON.stringify(todoItems), 7);
+        setCookie('todos', encodeURIComponent(JSON.stringify(todoItems)), 7);  // Encode ข้อมูลก่อนบันทึก
     }
 
     // Add a new to-do item to the DOM
