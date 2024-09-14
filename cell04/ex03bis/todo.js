@@ -3,14 +3,14 @@ $(document).ready(function() {
         const todos = getCookie('todos');
         if (todos) {
             const todoArray = JSON.parse(todos);
-            todoArray.forEach(todo => addTodoToDOM(todo, true));  // ใช้ prepend เพื่อคงลำดับเดิมจากคุกกี้
+            todoArray.forEach(todo => addTodoToDOM(todo, false));  // โหลดรายการจากคุกกี้
         }
     }
 
     function saveTodos() {
         const todoItems = [];
         $('#ft_list .todo-item').each(function() {
-            todoItems.push($(this).text());
+            todoItems.unshift($(this).text());  // ใช้ unshift เพื่อเก็บรายการในลำดับล่าสุดอยู่ด้านบน
         });
         setCookie('todos', JSON.stringify(todoItems), 7);
     }
@@ -19,8 +19,7 @@ $(document).ready(function() {
     function addTodoToDOM(todoText, isNew = true) {
         if (todoText) {
             const todoItem = $('<div>').addClass('todo-item').text(todoText);
-            // เพิ่มทุกอย่างโดยใช้ prepend ไม่ว่าจะเป็นรายการใหม่หรือจากคุกกี้
-            $('#ft_list').prepend(todoItem);  
+            $('#ft_list').prepend(todoItem);  // เพิ่มรายการใหม่ด้านบนสุดเสมอ
         }
     }
 
@@ -52,7 +51,7 @@ $(document).ready(function() {
         const newTodo = prompt('Enter a new to-do:');
         if (newTodo && newTodo.trim()) {
             addTodoToDOM(newTodo.trim());
-            saveTodos();
+            saveTodos();  // บันทึกรายการหลังจากเพิ่มใหม่
         }
     });
 
@@ -60,9 +59,9 @@ $(document).ready(function() {
         const todoText = $(this).text();
         if (confirm(`Are you sure you want to remove "${todoText}"?`)) {
             $(this).remove();
-            saveTodos();
+            saveTodos();  // บันทึกรายการใหม่หลังจากลบ
         }
     });
 
-    loadTodos();
+    loadTodos();  // โหลดรายการเมื่อเริ่มต้น
 });
