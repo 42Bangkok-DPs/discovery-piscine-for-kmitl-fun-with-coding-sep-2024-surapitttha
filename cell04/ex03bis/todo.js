@@ -3,9 +3,10 @@ $(document).ready(function() {
         const todos = getCookie('todos');
         if (todos) {
             const todoArray = JSON.parse(todos);
-            todoArray.forEach(todo => addTodoToDOM(todo));
+            todoArray.forEach(todo => addTodoToDOM(todo, true));  // ใช้ prepend เพื่อคงลำดับเดิมจากคุกกี้
         }
     }
+
     function saveTodos() {
         const todoItems = [];
         $('#ft_list .todo-item').each(function() {
@@ -15,10 +16,11 @@ $(document).ready(function() {
     }
 
     // Add a new to-do item to the DOM
-    function addTodoToDOM(todoText) {
+    function addTodoToDOM(todoText, isNew = true) {
         if (todoText) {
             const todoItem = $('<div>').addClass('todo-item').text(todoText);
-            $('#ft_list').append(todoItem);  
+            // เพิ่มทุกอย่างโดยใช้ prepend ไม่ว่าจะเป็นรายการใหม่หรือจากคุกกี้
+            $('#ft_list').prepend(todoItem);  
         }
     }
 
@@ -61,5 +63,6 @@ $(document).ready(function() {
             saveTodos();
         }
     });
+
     loadTodos();
 });
